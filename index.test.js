@@ -1,14 +1,14 @@
 const hello = require('./hello');
 const handleListen = require('./listeningHandler');
 
-it('should call res.send() with Hello World!', () => {
+it('should call res.send() with Travis CI works!', () => {
   const send = jest.fn();
   const res = {
     send,
   };
   hello({}, res);
   expect(send.mock.calls).toHaveLength(1);
-  expect(send.mock.calls[0][0]).toBe('Hello World!');
+  expect(send.mock.calls[0][0]).toBe('Travis CI works!');
 });
 
 
