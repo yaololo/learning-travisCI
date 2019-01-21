@@ -1,9 +1,15 @@
-const app = require('express')();
+const express = require('express');
+const app = express();
+const hello = require('./hello');
+const listen = require('./listeningHandler');
 
-app.get('/', (req, res) => {
-  res.send('Hello World');
-});
+const PORT = 3000;
+let server = {};
 
-app.listen(3001, () => {
-  console.log('App is listening on port 3001');
-});
+server.start = () => {
+  app.get('/', hello);
+  app.listen(PORT, listen(console.log, PORT));
+};
+server.start();
+module.exports = server;
+
