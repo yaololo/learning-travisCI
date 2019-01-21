@@ -9,19 +9,20 @@ before_install:
 - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.13.0
 - export PATH="$HOME/.yarn/bin:$PATH"
 script:
+  - yarn test
 
-jobs:
-  include:
-    - stage: Test, Build, and Deploy
-      branches:
-        only:
-        - master
-      script:
-        - yarn test
-      deploy: &heroku
-        provider: heroku
-        app: learn-travisci
-        api_key:
-          secure: c0om7fQwShpJ4Mb8L0q7j9S24hhgOVb6qTYl/Yeh27MbdQNdH72WM+vPIQGBQl7oHwCg4Tz33mbIckdXqsCa16d68itHrx14bAaMBli/WSY1AG2ryJIv83iOmbCYP+p1arrSycdC5u2uVo0NCDfmJ+ujAUSu8aSFjwNRT5jcCfEkRfapOhSY4wQTkUA0x01/53r0F4EQzh6OrYw+RutmhV8e2EfwdoxN7rUMCqLuSCHyY5NpQCq+qHmtoPM+W+3YwAt5tFfL8V1I29+HegQ3e+Na3Q5MnSea27Jc9Jg7AsxDx7OkI3JHw6NaMi0G3XSRAA7jvFFCLprUbeeHh8qX7dvsJiioupitIX0gUdrRiyMFLRWLWm1siya5fJLfDkS1AD0XN2tT2nlzgTTd/h9O3SBXbv1Oy67VCarIt/ddbqAf/NTvYO0WoKKVxQ8NGwmuAljGuhGjuPj6IPlVYbfqZDTX6ytGAubGmhvZ1GYkphX3zYaPuTcQrMjmS10QXABJ6p8IJG7O+rycyIzTuI3f/xi5CFBmqelOD6vl+QFRlx1RW47L6s+NwAK7vjFpSKYp52tO4nOL2UOsy7tbZvlXNSELZDZzRmfMxGPTRK5heuOy0eacPJ2Rper3n08G+azKv/IdNyC9P2gzkFCF0Wvy/cr3SvyB8Svr1UudC8bLEug=
-    - stage: no idea why I need to do this
-      script: 'curl http://learn-travisci.herokuapp.com'
+# jobs:
+#   include:
+#     - stage: Test, Build, and Deploy
+#       branches:
+#         only:
+#         - master
+#       script:
+#         - yarn test
+#       deploy: &heroku
+#         provider: heroku
+#         app: learn-travisci
+#         api_key:
+#           secure: c0om7fQwShpJ4Mb8L0q7j9S24hhgOVb6qTYl/Yeh27MbdQNdH72WM+vPIQGBQl7oHwCg4Tz33mbIckdXqsCa16d68itHrx14bAaMBli/WSY1AG2ryJIv83iOmbCYP+p1arrSycdC5u2uVo0NCDfmJ+ujAUSu8aSFjwNRT5jcCfEkRfapOhSY4wQTkUA0x01/53r0F4EQzh6OrYw+RutmhV8e2EfwdoxN7rUMCqLuSCHyY5NpQCq+qHmtoPM+W+3YwAt5tFfL8V1I29+HegQ3e+Na3Q5MnSea27Jc9Jg7AsxDx7OkI3JHw6NaMi0G3XSRAA7jvFFCLprUbeeHh8qX7dvsJiioupitIX0gUdrRiyMFLRWLWm1siya5fJLfDkS1AD0XN2tT2nlzgTTd/h9O3SBXbv1Oy67VCarIt/ddbqAf/NTvYO0WoKKVxQ8NGwmuAljGuhGjuPj6IPlVYbfqZDTX6ytGAubGmhvZ1GYkphX3zYaPuTcQrMjmS10QXABJ6p8IJG7O+rycyIzTuI3f/xi5CFBmqelOD6vl+QFRlx1RW47L6s+NwAK7vjFpSKYp52tO4nOL2UOsy7tbZvlXNSELZDZzRmfMxGPTRK5heuOy0eacPJ2Rper3n08G+azKv/IdNyC9P2gzkFCF0Wvy/cr3SvyB8Svr1UudC8bLEug=
+#     - stage: no idea why I need to do this
+#       script: 'curl http://learn-travisci.herokuapp.com'
