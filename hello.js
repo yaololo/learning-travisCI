@@ -1,1 +1,1 @@
-module.exports = (_, res) => res.send('Hello World!');
+module.exports = (_, res) => res.send('Travis CI works!');
