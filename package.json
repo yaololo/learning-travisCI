@@ -11,5 +11,9 @@
     "start": "node index.js",
     "test": "yarn jest ",
     "test:watch": "yarn jest --watch"
+  },
+  "engines": {
+    "node": "8.11.3",
+    "yarn": "1.13.0"
   }
 }

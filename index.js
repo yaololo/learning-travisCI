@@ -4,12 +4,8 @@ const hello = require('./hello');
 const listen = require('./listeningHandler');
 
 const PORT = 3000;
-let server = {};
+app.get('/', hello);
+app.listen(PORT, listen(console.log, PORT));
 
-server.start = () => {
-  app.get('/', hello);
-  app.listen(PORT, listen(console.log, PORT));
-};
-server.start();
-module.exports = server;
+module.exports = app;
 
