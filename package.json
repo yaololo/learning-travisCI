@@ -8,6 +8,8 @@
     "jest": "^23.6.0"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "test": "yarn jest ",
+    "test:watch": "yarn jest --watch"
   }
 }
