@@ -8,7 +8,7 @@ it('should call res.send() with Travis CI works!', () => {
   };
   hello({}, res);
   expect(send.mock.calls).toHaveLength(1);
-  expect(send.mock.calls[0][0]).toBe('Travis CI works11111111111111!');
+  expect(send.mock.calls[0][0]).toBe('asdfasdfasdfasfds!');
 });
 
 
